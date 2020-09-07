@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="results">
   <% if @user_letters == "" || @user_letters != @grid_letters %>
   <%= "Sorry but the letters have to be in" %> <strong><%= params[:random_letters] %></strong>
   <% elsif @user["found"] == false %>
