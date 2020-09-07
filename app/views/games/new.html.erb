@@ -1,0 +1,15 @@
+<div class="container">
+  <h1 class="grid">
+    <% @letters.map do |letter|  %>
+      <%= letter %>
+    <% end %>
+  </h1>
+
+  <form class="form" action="/score" method="post">
+    <input class="input" id="txt-input" type="text" name="word">
+    <input class="input" type="submit" value="Check">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :random_letters, @letters %>
+  </form>
+  <p id="score">Your score: <%= session[:score] %></p>
+</div>

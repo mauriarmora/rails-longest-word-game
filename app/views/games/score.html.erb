@@ -1,0 +1,10 @@
+<div class="container">
+  <% if @user_letters == "" || @user_letters != @grid_letters %>
+  <%= "Sorry but the letters have to be in" %> <strong><%= params[:random_letters] %></strong>
+  <% elsif @user["found"] == false %>
+  <%= "Sorry but" %> <strong> <%= params[:word].upcase %></strong> <%= "is not an English word..." %>
+  <% else %>
+  <%= "Congratulations" %><strong> <%= params[:word].upcase %></strong> <%= "is a valid English word" %><br>
+  <p id="score">Your score: <% session[:score].nil? ? session[:score] = params[:word].length : session[:score] += params[:word].length %></p>
+  <% end %>
+</div>
